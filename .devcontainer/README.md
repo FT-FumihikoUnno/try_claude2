@@ -1,50 +1,52 @@
-# DevContainer セットアップ
+# DevContainer Setup
 
-このDevContainerは、Python、Node.js、GitHub CLI、Claude Codeを含む開発環境を提供します。
+This DevContainer provides a development environment with Python, Node.js, GitHub CLI, and Claude Code.
 
-## 初回セットアップ
+[日本語版はこちら](README-ja.md)
 
-コンテナ作成後、以下の認証が必要です：
+## Initial Setup
 
-1. **GitHub CLI の認証**
+After container creation, authentication is required:
+
+1. **GitHub CLI Authentication**
    ```bash
    gh auth login
    ```
 
-2. **Claude の認証**
+2. **Claude Authentication**
    ```bash
    claude
    ```
 
-## 含まれる機能
+## Included Features
 
-- **Python 3.14** - 最新の Python 開発環境
-- **Node.js 20** - JavaScript/TypeScript 開発用
-- **GitHub CLI** - GitHub との統合
-- **Docker-in-Docker** - コンテナ内での Docker 操作
-- **Claude Code 拡張機能** - VSCode で Claude を使用可能
+- **Python 3.13** - Latest Python development environment
+- **Node.js 20** - For JavaScript/TypeScript development
+- **GitHub CLI** - GitHub integration
+- **Docker-in-Docker** - Docker operations within the container
+- **Claude Code Extension** - Use Claude in VSCode
 
-## systemd について
+## About systemd
 
-このDevContainer設定では、systemd は無効になっています。
+systemd is disabled in this DevContainer configuration.
 
-- systemd を有効にする場合は、Dockerfile等でENTRYPOINTによって起動するコンテナを使う必要があります
-- Docker-in-Docker のfeature は、systemd有効時には使えなくなる可能性があります
-- その場合は、別途 docker のインストールが必要になります
+- To enable systemd, you need to use a container that starts via ENTRYPOINT in a Dockerfile
+- The Docker-in-Docker feature may not work when systemd is enabled
+- In such cases, separate Docker installation is required
 
-## トラブルシューティング
+## Troubleshooting
 
-### Claude Code のインストールに失敗する場合
+### If Claude Code Installation Fails
 
-手動でインストールしてください：
+Install manually:
 
 ```bash
 npm install -g @anthropic-ai/claude-code
 ```
 
-### 認証情報が失われた場合
+### If Authentication is Lost
 
-コンテナを再作成すると認証情報が失われるため、再度認証が必要になります：
+When the container is recreated, authentication is lost and re-authentication is required:
 
 ```bash
 gh auth login

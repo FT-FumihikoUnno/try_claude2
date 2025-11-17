@@ -7,12 +7,12 @@ echo "Installing Claude Code..."
 if npm install -g @anthropic-ai/claude-code; then
     echo "✓ Claude Code installed successfully"
 else
-    echo "✗ Failed to install Claude Code. Please install manually."
-    exit 1
+    echo "✗ Failed to install Claude Code. Please install manually with: npm install -g @anthropic-ai/claude-code"
+    echo "Continuing with container setup..."
 fi
 
 echo "Verifying installation..."
-claude --version || echo "Claude installed but may need authentication"
+claude --version || echo "⚠️  Claude installed but requires authentication. Run 'claude' to authenticate."
 
 echo ""
 echo "⚠️  Post-setup required:"
