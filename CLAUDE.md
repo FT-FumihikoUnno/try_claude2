@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+[English](CLAUDE.md) | [日本語](CLAUDE-ja.md)
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Repository Overview
@@ -91,6 +93,24 @@ When creating or updating documentation files in this repository:
 - Japanese version: Append `-ja` before the extension (e.g., `README-ja.md`, `CLAUDE-ja.md`)
 - Keep content synchronized between both language versions
 - Include language navigation links at the top of each document when appropriate
+
+## Development Workflow
+
+This repository follows **GitHub flow** for development:
+
+1. **Create a branch** - Create a new branch from `main` for each feature or fix
+2. **Make commits** - Add commits with clear, descriptive messages
+3. **Open a Pull Request** - Open a PR early to discuss changes and get feedback
+4. **Review and discuss** - Collaborate on the code review process
+5. **Deploy and test** - Test changes in the branch before merging
+6. **Merge to main** - Once approved and tests pass, merge to `main`
+
+Key principles:
+- The `main` branch should always be deployable
+- Create descriptive branch names (e.g., `feature/add-authentication`, `fix/login-bug`)
+- Write clear commit messages that explain the "why" behind changes
+- Use Pull Requests for all changes to facilitate code review and discussion
+- Keep PRs focused and reasonably sized for easier review
 
 ## Working with GitHub Actions
 
