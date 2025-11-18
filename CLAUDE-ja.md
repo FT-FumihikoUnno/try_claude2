@@ -19,9 +19,13 @@
 - **Docker-in-Docker** - コンテナ内での Docker 操作
 - **Claude Code 拡張機能** - プリインストールされた VSCode 拡張機能
 
-### コンテナ作成後の認証
+### 認証
 
-コンテナ作成後、以下の認証が必要です：
+認証情報は `devcontainer.json` で設定されたマウントを介してコンテナのリビルド後も永続化されます：
+- GitHub CLI の認証情報: `~/.config/gh`
+- Claude の認証情報: `~/.config/claude`
+
+認証または再認証が必要な場合：
 
 ```bash
 # GitHub CLI の認証
@@ -30,8 +34,6 @@ gh auth login
 # Claude の認証
 claude
 ```
-
-注意: コンテナが再作成されると認証情報が失われるため、再実行が必要です。
 
 ### Claude Code の手動インストール
 
