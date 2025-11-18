@@ -23,7 +23,7 @@
 
 認証情報は `devcontainer.json` で設定されたマウントを介してコンテナのリビルド後も永続化されます：
 - GitHub CLI の認証情報: `~/.config/gh`
-- Claude の認証情報: `~/.config/claude`
+- Claude の認証情報: `~/.config/claude-code`
 
 認証または再認証が必要な場合：
 

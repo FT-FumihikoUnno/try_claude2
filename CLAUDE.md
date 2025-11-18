@@ -23,7 +23,7 @@ The repository uses VSCode DevContainers with the following stack:
 
 Authentication credentials are persisted across container rebuilds via mounts configured in `devcontainer.json`:
 - GitHub CLI credentials: `~/.config/gh`
-- Claude credentials: `~/.config/claude`
+- Claude credentials: `~/.config/claude-code`
 
 If you need to authenticate or re-authenticate:
 
