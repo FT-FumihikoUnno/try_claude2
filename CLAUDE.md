@@ -25,7 +25,7 @@ Authentication credentials are persisted across container rebuilds via mounts co
 - GitHub CLI credentials: `~/.config/gh`
 - Claude credentials: `~/.config/claude-code`
 
-The required directories are automatically created on the host when the DevContainer initializes, eliminating the need for manual setup.
+The required directories are automatically created on the host when the DevContainer initializes via the `.devcontainer/initialize.sh` script, eliminating the need for manual setup.
 
 If you need to authenticate or re-authenticate:
 

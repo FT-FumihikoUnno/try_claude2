@@ -25,7 +25,7 @@
 - GitHub CLI の認証情報: `~/.config/gh`
 - Claude の認証情報: `~/.config/claude-code`
 
-必要なディレクトリは、DevContainer の初期化時にホスト側で自動的に作成されるため、手動でのセットアップは不要です。
+必要なディレクトリは、DevContainer の初期化時に `.devcontainer/initialize.sh` スクリプトを介してホスト側で自動的に作成されるため、手動でのセットアップは不要です。
 
 認証または再認証が必要な場合：
 
