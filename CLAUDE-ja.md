@@ -42,7 +42,7 @@ claude
 `postCreateCommand.sh` による自動インストールが失敗した場合：
 
 ```bash
-npm install -g @anthropic-ai/claude-code
+curl -fsSL https://claude.ai/install.sh | sh
 ```
 
 ## GitHub Actions 統合

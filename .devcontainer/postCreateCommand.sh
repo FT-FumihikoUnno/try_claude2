@@ -1,13 +1,13 @@
 #!/bin/bash
 set -e
 
-# claude install by npm
-# https://code.claude.com/docs/en/setup#npm
+# claude install by native installation (recommended)
+# https://code.claude.com/docs/en/setup
 echo "Installing Claude Code..."
-if npm install -g @anthropic-ai/claude-code; then
+if curl -fsSL https://claude.ai/install.sh | sh; then
     echo "✓ Claude Code installed successfully"
 else
-    echo "✗ Failed to install Claude Code. Please install manually with: npm install -g @anthropic-ai/claude-code"
+    echo "✗ Failed to install Claude Code. Please install manually: curl -fsSL https://claude.ai/install.sh | sh"
     echo "Continuing with container setup..."
 fi
 
