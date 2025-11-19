@@ -4,10 +4,10 @@ set -e
 # claude install by native installation (recommended)
 # https://code.claude.com/docs/en/setup
 echo "Installing Claude Code..."
-if curl -fsSL https://claude.ai/install.sh | sh; then
+if curl -fsSL https://claude.ai/install.sh | bash; then
     echo "✓ Claude Code installed successfully"
 else
-    echo "✗ Failed to install Claude Code. Please install manually: curl -fsSL https://claude.ai/install.sh | sh"
+    echo "✗ Failed to install Claude Code. Please install manually: curl -fsSL https://claude.ai/install.sh | bash"
     echo "Continuing with container setup..."
 fi
 
