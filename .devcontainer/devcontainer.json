@@ -25,7 +25,7 @@
 	},
 
 	// Create authentication directories before container starts (if they don't exist)
-	"initializeCommand": "bash ${localWorkspaceFolder}/.devcontainer/initialize.sh",
+	"initializeCommand": "${localWorkspaceFolder}/.devcontainer/initialize.sh",
 
 	// Mount authentication credentials to persist across container rebuilds
 	"mounts": [
