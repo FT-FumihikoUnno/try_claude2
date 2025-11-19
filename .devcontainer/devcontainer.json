@@ -24,6 +24,13 @@
 		}
 	},
 
+	// Create authentication directories before container starts (if they don't exist)
+	"initializeCommand": {
+		"linux": "mkdir -p ~/.config/gh ~/.config/claude-code",
+		"osx": "mkdir -p ~/.config/gh ~/.config/claude-code",
+		"windows": "powershell -Command \"New-Item -ItemType Directory -Force -Path $env:USERPROFILE\\.config\\gh, $env:USERPROFILE\\.config\\claude-code\""
+	},
+
 	// Mount authentication credentials to persist across container rebuilds
 	"mounts": [
 		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.config/gh,target=/home/vscode/.config/gh,type=bind,consistency=cached",
