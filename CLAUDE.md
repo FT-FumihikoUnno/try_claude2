@@ -19,9 +19,15 @@ The repository uses VSCode DevContainers with the following stack:
 - **Docker-in-Docker** - Docker operations within the container
 - **Claude Code Extension** - Pre-installed VSCode extension
 
-### Post-Container Authentication
+### Authentication
 
-After container creation, authentication is required:
+Authentication credentials are persisted across container rebuilds via mounts configured in `devcontainer.json`:
+- GitHub CLI credentials: `~/.config/gh`
+- Claude credentials: `~/.config/claude-code` (documented location) and `~/.claude` (actual storage location)
+
+The required directories are automatically created on the host when the DevContainer initializes via the `.devcontainer/initialize.sh` script, eliminating the need for manual setup.
+
+If you need to authenticate or re-authenticate:
 
 ```bash
 # GitHub CLI authentication
@@ -31,14 +37,12 @@ gh auth login
 claude
 ```
 
-Note: Authentication is lost when the container is recreated and must be re-run.
-
 ### Manual Claude Code Installation
 
 If the automatic installation via `postCreateCommand.sh` fails:
 
 ```bash
-npm install -g @anthropic-ai/claude-code
+curl -fsSL https://claude.ai/install.sh | sh
 ```
 
 ## GitHub Actions Integration
