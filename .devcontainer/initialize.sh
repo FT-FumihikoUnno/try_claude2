@@ -4,11 +4,14 @@ set -e
 # Create authentication directories for GitHub CLI and Claude Code
 # These directories will be mounted to persist credentials across container rebuilds
 
-# Determine the config base directory (Unix/WSL or Windows)
-CONFIG_DIR="${HOME:-$USERPROFILE}/.config"
+# Determine the home directory (Unix/WSL or Windows)
+HOME_DIR="${HOME:-$USERPROFILE}"
 
-# Create directories (silently skip if they already exist)
-mkdir -p "$CONFIG_DIR/gh" 2>/dev/null || true
-mkdir -p "$CONFIG_DIR/claude-code" 2>/dev/null || true
+# Create .config subdirectories
+mkdir -p "$HOME_DIR/.config/gh" 2>/dev/null || true
+mkdir -p "$HOME_DIR/.config/claude-code" 2>/dev/null || true
 
-echo "Authentication directories ready: $CONFIG_DIR/gh, $CONFIG_DIR/claude-code"
+# Create .claude directory (actual Claude Code credentials location)
+mkdir -p "$HOME_DIR/.claude" 2>/dev/null || true
+
+echo "Authentication directories ready: $HOME_DIR/.config/gh, $HOME_DIR/.config/claude-code, $HOME_DIR/.claude"

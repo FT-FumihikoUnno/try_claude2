@@ -23,7 +23,7 @@
 
 認証情報は `devcontainer.json` で設定されたマウントを介してコンテナのリビルド後も永続化されます：
 - GitHub CLI の認証情報: `~/.config/gh`
-- Claude の認証情報: `~/.config/claude-code`
+- Claude の認証情報: `~/.config/claude-code`（ドキュメント記載の場所）と `~/.claude`（実際の保存場所）
 
 必要なディレクトリは、DevContainer の初期化時に `.devcontainer/initialize.sh` スクリプトを介してホスト側で自動的に作成されるため、手動でのセットアップは不要です。
 
